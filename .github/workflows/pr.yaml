@@ -9,11 +9,12 @@ jobs:
     name: PR
     steps:
       - uses: actions/checkout@master
-      - uses: adrianjost/files-sync-action@v1.4.1
+      - uses: andstor/copycat-action@v3
         with:
-          SRC_ROOT: /src
-          TARGET_ROOT: /web/assets/js
-          COMMIT_MESSAGE: 'javascript sync'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_FILES }}
-          TARGET_REPOS: |
-            deuxhuithuit/craft-template
+          personal_token: ${{ secrets.SYNC_TOKEN }}
+          src_path: /src
+          dst_path: /web/assets/js
+          dst_owner: deuxhuithuit
+          dst_repo_name: craft-template
+          clean: true
+          commit_message: javascript sync
