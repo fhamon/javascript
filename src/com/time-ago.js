@@ -9,7 +9,7 @@
 	'use strict';
 	
 	// French
-	if ($('html').attr('lang') == 'fr') {
+	if ($('html').attr('lang') === 'fr') {
 		jQuery.timeago.settings.strings = {
 			// environ ~= about, it's optional
 			prefixAgo: 'Publié il y a',

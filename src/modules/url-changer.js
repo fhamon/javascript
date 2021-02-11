@@ -13,8 +13,10 @@
 
 	const init = function () {
 		scope.addEventListener(App.device.events.click, (event) => {
-			const target = (event.target.matches(sels.links) ? event.target : null) || event.target.closest(sels.links);
-			if (!!target && !event.ctrlKey) {
+			let target = event.target.matches(sels.links) ? event.target : null;
+			target = target || event.target.closest(sels.links);
+
+			if (!!target && !(event.ctrlKey || event.metaKey)) {
 
 				// is ours ?
 				if (target.origin !== window.location.origin) {
@@ -40,6 +42,14 @@
 				// is not override ajax
 				if (target.getAttribute('data-ajax') === 'false') {
 					return;
+				}
+
+				if (target.getAttribute('data-action') === 'full') {
+					return;
+				}
+
+				if (!!window.location.pathname.endsWith('/') && !target.pathname.endsWith('/')) {
+					target.pathname += '/';
 				}
 
 				window.history.pushState({}, target.textContent, target.href);

@@ -52,12 +52,12 @@
 	var getPropertyValue = function (source, property) {
 		var value = 0;
 		
-		if (property == 'height') {
+		if (property === 'height') {
 			// Ensure to get not rounded value from jquery
 			value = Math.floor(parseFloat(window.getComputedStyle(source[0]).height));
-		} else if (property == 'outerHeight-full') {
+		} else if (property === 'outerHeight-full') {
 			value = source.outerHeight(true);
-		} else if (property == 'outerWidth-full') {
+		} else if (property === 'outerWidth-full') {
 			value = source.outerWidth(true);
 		} else {
 			value = source[property]();
@@ -78,7 +78,7 @@
 			var aggregate = t.attr(AGGREGATE_ATTR);
 
 			if (!!commonAncestorSelector) {
-				if (commonAncestorSelector == 'self') {
+				if (commonAncestorSelector === 'self') {
 					scope = t;
 				} else {
 					scope = t.closest(commonAncestorSelector);
@@ -97,12 +97,12 @@
 			if (source.length) {
 				var value;
 				
-				if (aggregate == 'sum') {
+				if (aggregate === 'sum') {
 					value = 0;
 					source.each(function () {
 						value += getPropertyValue($(this), withProperty);
 					});
-				} else if (aggregate == 'min') {
+				} else if (aggregate === 'min') {
 					value = _.reduce(source, function (memo, current) {
 						var curVal = getPropertyValue($(current), withProperty);
 						if (curVal < memo) {
@@ -111,7 +111,7 @@
 						return memo;
 					}, getPropertyValue(source.first(), withProperty));
 					
-				} else if (aggregate == 'max') {
+				} else if (aggregate === 'max') {
 					value = _.reduce(source, function (memo, current) {
 						var curVal = getPropertyValue($(current), withProperty);
 						if (curVal > memo) {

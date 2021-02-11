@@ -66,7 +66,7 @@
 
 			if (t.filter('[' + TOGGLE_KEY_VALUE_ATTR + ']').length) {
 				//Toggle action
-				if (qs[key] && qs[key] == value) {
+				if (qs[key] && qs[key] === value) {
 					qs[key] = null;
 				} else {
 					qs[key] = value;

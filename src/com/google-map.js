@@ -66,7 +66,7 @@
 				var res;
 
 				geo.geocode(data, function (results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
+					if (status === google.maps.GeocoderStatus.OK) {
 						res = results[0].geometry.location;
 					}
 					
