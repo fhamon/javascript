@@ -4,6 +4,7 @@
   "description": "Deux Huit Huit's collection of javascript files used in our creations",
   "main": "index.js",
   "scripts": {
+    "ci": "grunt ci",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/DeuxHuitHuit/javascript/issues"
   },
-  "homepage": "https://github.com/DeuxHuitHuit/javascript#readme"
+  "homepage": "https://github.com/DeuxHuitHuit/javascript#readme",
+  "dependencies": {
+    "grunt": "^1.3.0",
+    "grunt-complexity": "^1.1.0",
+    "grunt-contrib-jshint": "^3.0.0"
+  }
 }
