@@ -1,0 +1,19 @@
+name: PR
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    name: PR
+    steps:
+      - uses: actions/checkout@master
+      - uses: adrianjost/files-sync-action@v1.0.1
+        with:
+          SRC_ROOT: /src
+          TARGET_ROOT: /web/assets/js
+          COMMIT_MESSAGE: 'javascript sync'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_FILES }}
+          TARGET_REPOS: |
+            deuxhuithuit/craft-template
