@@ -9,7 +9,7 @@ jobs:
     name: PR
     steps:
       - uses: actions/checkout@master
-      - uses: adrianjost/files-sync-action@v1.0.1
+      - uses: adrianjost/files-sync-action@v1.4.1
         with:
           SRC_ROOT: /src
           TARGET_ROOT: /web/assets/js
