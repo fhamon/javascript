@@ -15,6 +15,6 @@ jobs:
           src_path: src
           dst_path: web/assets/js
           dst_owner: deuxhuithuit
-          dst_repo_name: deuxhuithuit/craft-template
+          dst_repo_name: craft-template
           clean: true
           commit_message: javascript sync
