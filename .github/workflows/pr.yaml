@@ -1,0 +1,20 @@
+name: PR
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    name: PR
+    steps:
+      - uses: actions/checkout@master
+      - uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.SYNC_TOKEN }}
+          src_path: /src
+          dst_path: /web/assets/js
+          dst_owner: deuxhuithuit
+          dst_repo_name: craft-template
+          clean: true
+          commit_message: javascript sync
