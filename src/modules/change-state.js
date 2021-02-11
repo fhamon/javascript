@@ -36,13 +36,13 @@
 
 	var isSvgElement = function (item) {
 		return !!item && !!item.length && (
-			item[0].nodeName == 'polygon' ||
-			item[0].nodeName == 'polyline' ||
-			item[0].nodeName == 'path' ||
-			item[0].nodeName == 'g' ||
-			item[0].nodeName == 'circle' ||
-			item[0].nodeName == 'rect' ||
-			item[0].nodeName == 'text'
+			item[0].nodeName === 'polygon' ||
+			item[0].nodeName === 'polyline' ||
+			item[0].nodeName === 'path' ||
+			item[0].nodeName === 'g' ||
+			item[0].nodeName === 'circle' ||
+			item[0].nodeName === 'rect' ||
+			item[0].nodeName === 'text'
 		);
 	};
 
@@ -97,7 +97,7 @@
 				//Remove class
 				$.each(curClass, function (i, e) {
 
-					if (remClassArray.indexOf(e) == -1) {
+					if (remClassArray.indexOf(e) === -1) {
 						newClass.push(e);
 					}
 				});
@@ -118,8 +118,8 @@
 				}
 
 				$.each(curClass, function (i, e) {
-					if (e != flagClass) {
-						if (addClassArray.indexOf(e) == -1) {
+					if (e !== flagClass) {
+						if (addClassArray.indexOf(e) === -1) {
 							newClass.push(e);
 						}
 					}
@@ -218,11 +218,11 @@
 			} else {
 				//Ie Behavior
 				var classList = item.attr('class').split(' ');
-				curBoolState = classList.indexOf(flagClass) != -1;
+				curBoolState = classList.indexOf(flagClass) !== -1;
 			}
 		}
 
-		if (action == 'toggle') {
+		if (action === 'toggle') {
 			setItemState(item, state, !curBoolState);
 
 			if (curBoolState) {
@@ -232,14 +232,14 @@
 				//On callback
 				App.callback(callbacks.on);
 			}
-		} else if (action == 'on') {
+		} else if (action === 'on') {
 			if (!curBoolState) {
 				setItemState(item, state, true);
 
 				//On callback
 				App.callback(callbacks.on);
 			}
-		} else if (action == 'off') {
+		} else if (action === 'off') {
 			if (curBoolState) {
 				setItemState(item, state, false);
 

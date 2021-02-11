@@ -219,7 +219,7 @@
 						//Attach Date picker if class is present
 						if (data.field.find('.js-date-picker').length) {
 							var it = data.field.find('.js-date-picker');
-							var dateFormat = $('html').attr('lang') == 'fr' ?
+							var dateFormat = $('html').attr('lang') === 'fr' ?
 								'dd-mm-yy' :
 								'mm-dd-yy';
 							it.datepicker();

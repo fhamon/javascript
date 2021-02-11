@@ -201,7 +201,7 @@
 				action: 'on'
 			});
 
-			if (input.attr('type') == 'file') {
+			if (input.attr('type') === 'file') {
 				if (options.changeLabelTextToFilename) {
 					label.text(label.attr('data-text'));
 				} else {
@@ -219,9 +219,9 @@
 			var value;
 			var selectedInput;
 			var nb;
-			if (input.attr('type') == 'checkbox') {
+			if (input.attr('type') === 'checkbox') {
 				value = input.prop('checked') ? 'true' : '';
-			} else if (input.attr('type') == 'radio') {
+			} else if (input.attr('type') === 'radio') {
 				//Get grouped item
 				var goodInput = input.closest('form').
 					find('input[type=\'radio\'][name=\'' + input.attr('name') + '\']:checked');
@@ -290,7 +290,7 @@
 
 		var preview = function (e) {
 			var p = ctn.find(options.preview);
-			if (input.attr('type') == 'file') {
+			if (input.attr('type') === 'file') {
 				setValueState();
 				if (!!p.length) {
 					var file = !!e && !!e.target.files && e.target.files[0];

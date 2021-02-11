@@ -30,7 +30,7 @@
 	var twitterhash = function (t) {
 		return t.replace(/(^|[^&\w'"]+)\#([a-zA-Z0-9_àáâãäåçèéêëìíîïðòóôõöùúûüýÿ^"^<^>]+)/gi,
 			function (m, m1, m2) {
-				return m.substr(-1) === '"' || m.substr(-1) == '<' ?
+				return m.substr(-1) === '"' || m.substr(-1) === '<' ?
 					m : m1 + '<a href="https://twitter.com/search?q=%23' + m2 +
 						'&src=hash" target="_blank rel="noopener"">#' + m2 + '</a>';
 			}
@@ -53,4 +53,3 @@
 	};
 	
 })(jQuery);
-
