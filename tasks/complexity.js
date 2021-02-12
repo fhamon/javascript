@@ -6,7 +6,8 @@ module.exports = (grunt) => {
 			generic: {
 				src: ['src/**/*.js'],
 				exclude: [
-					'src/utils/keys.js'
+					'src/utils/keys.js',
+					'src/core/*.js'
 				],
 				options: {
 					errorsOnly: false,

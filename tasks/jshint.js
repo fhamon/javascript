@@ -49,7 +49,10 @@ module.exports = function shopify(grunt) {
 					Shopify: true
 				}
 			},
-			all: ['src/**/*.js']
+			all: [
+				'src/**/*.js',
+				'!src/core/*.js'
+			]
 		}
 	});
 };
